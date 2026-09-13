@@ -45,11 +45,11 @@ cask "agent-pet-runtime" do
 
     It lives in the menu bar. Connect an agent before it will react to
     anything:
-      "#{opt_prefix}/AgentPet.app/Contents/MacOS/AgentPet" --configure claude-code
+      "#{appdir}/AgentPet.app/Contents/MacOS/AgentPet" --configure claude-code
 
     Uninstalling does not remove the hooks it wrote into your agents'
     configuration files. Remove those first, or they will keep running a
     shim that is no longer installed:
-      "#{opt_prefix}/AgentPet.app/Contents/MacOS/AgentPet" --unconfigure claude-code
+      "#{appdir}/AgentPet.app/Contents/MacOS/AgentPet" --unconfigure claude-code
   EOS
 end
