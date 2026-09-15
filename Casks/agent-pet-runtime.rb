@@ -2,8 +2,8 @@
 # frozen_string_literal: true
 
 cask "agent-pet-runtime" do
-  version "0.9.5"
-  sha256 "5f01e1261041bae18a31d7d466e4103b3fb4d7909f57ee2f89737ba5d0663a1f"
+  version "0.9.6"
+  sha256 "dfc9c9b8525392624f641229a8fc201abe956084c54b71ba5f151380b0977ba4"
 
   url "https://github.com/dncore/agent-pet-runtime/releases/download/v#{version}/AgentPet-#{version}.zip"
   name "Agent Pet Runtime"
