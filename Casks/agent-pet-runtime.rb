@@ -2,8 +2,8 @@
 # frozen_string_literal: true
 
 cask "agent-pet-runtime" do
-  version "0.9.6"
-  sha256 "dfc9c9b8525392624f641229a8fc201abe956084c54b71ba5f151380b0977ba4"
+  version "0.10.0"
+  sha256 "1412b5ed06681a54ea180e32a883d2265277b5dda830f674b32035434b41bd1b"
 
   url "https://github.com/dncore/agent-pet-runtime/releases/download/v#{version}/AgentPet-#{version}.zip"
   name "Agent Pet Runtime"
@@ -59,9 +59,13 @@ cask "agent-pet-runtime" do
     anything:
       "#{appdir}/AgentPet.app/Contents/MacOS/AgentPet" --configure claude-code
 
-    Uninstalling does not remove the hooks it wrote into your agents'
-    configuration files. Remove those first, or they will keep running a
-    shim that is no longer installed:
+    Uninstalling does not remove what it installed into your agents — the
+    hook lines it wrote into their configuration files, nor the extension
+    files it put in ~/.pi/agent/extensions and ~/.omp/agent/extensions.
+    Remove those first, or they will keep running a shim that is no longer
+    installed:
       "#{appdir}/AgentPet.app/Contents/MacOS/AgentPet" --unconfigure claude-code
+      "#{appdir}/AgentPet.app/Contents/MacOS/AgentPet" --unconfigure pi
+      "#{appdir}/AgentPet.app/Contents/MacOS/AgentPet" --unconfigure omp
   EOS
 end
